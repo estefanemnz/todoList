@@ -1,26 +1,32 @@
 import { useState } from 'react'
 import './App.css'
+import { v4 as uuidv4 } from 'uuid'
 
 import TodoControls from '@/components/TodoControls/TodoControls'
 import TaskList from '@/components/TaskList/TaskList'
-import AddTask from '@/components/AddTask/AddTask'
+import Modal from '@/components/Modal/Modal'
 function App() {
 
   const [Tasks, setTasks] = useState([
-    {name: "Tarefa 1"},
-    {name: "Tarefa 2"},
-    {name: "Tarefa 3"},
-    {name: "Tarefa 4"}
+    {title: "Lavar banheiro",
+      id: uuidv4()
+    },
+    {title: "Estudar POO",
+      id: uuidv4()
+    },
+    {title: "Fazer conciliação",
+      id: uuidv4()
+    },
+    {title: "Lavar roupas",
+      id: uuidv4()
+    }
   ]);
 
   return (
     <>
-      <div>
+      <div >
         <TodoControls/>
-        <TaskList>
-          {Tasks.map(Item => (<h1>{Item.name}</h1>))}
-        </TaskList>
-        <AddTask/>
+        <TaskList tasks={Tasks} setTasks={setTasks}/>
       </div>
     </>
   )
