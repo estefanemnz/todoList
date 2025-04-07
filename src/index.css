@@ -13,6 +13,9 @@
 
 body{
     font-family: 'Kanit', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
 }
 
   button {
@@ -24,3 +27,8 @@ body{
   input, button {
     outline: none;
   }
+
+#root{
+  width: 55%;
+  height: 100%;
+}

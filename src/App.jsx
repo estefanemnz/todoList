@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 import { v4 as uuidv4 } from 'uuid'
-
 import TodoControls from '@/components/TodoControls/TodoControls'
 import TaskList from '@/components/TaskList/TaskList'
-import Modal from '@/components/Modal/Modal'
+
 function App() {
 
   const [Tasks, setTasks] = useState([
-    {title: "Lavar banheiro",
+    {title: "Tarefa 1",
       id: uuidv4()
     },
     {title: "Estudar POO",
@@ -17,14 +16,14 @@ function App() {
     {title: "Fazer conciliação",
       id: uuidv4()
     },
-    {title: "Lavar roupas",
+    {title: "Terminar CSS",
       id: uuidv4()
     }
   ]);
 
   return (
     <>
-      <div >
+      <div className='container'>
         <TodoControls/>
         <TaskList tasks={Tasks} setTasks={setTasks}/>
       </div>
