@@ -5,9 +5,9 @@ import styles from './TodoControls.module.css'
 
 function TodoControls() {
   return (
-    <div className={styles.panelControl}>
+    <div className={styles.containerPanelControl}>
       <h1>Lista de Tarefas</h1>
-      <div className={styles.container}>
+      <div className={styles.containerContent}>
         <div className={styles.search}>
           <input placeholder='Buscar tarefa...' />
           <button className={styles.searchButton}>
@@ -16,12 +16,12 @@ function TodoControls() {
         </div>
         <div className={styles.filter}>
           <select className={styles.selected}>
-            <option value='all'>Todas</option>
-            <option value='completed'>Completas</option>
-            <option value='incomplete'>Incompletas</option>
+            <option value='all' className={styles.option}>Todas</option>
+            <option value='completed'  className={styles.option}>Completas</option>
+            <option value='incomplete'  className={styles.option}>Incompletas</option>
           </select>
         </div>
-        <button>
+        <button className={styles.colorButton}>
           <img src={ColorScheme} />
         </button>
       </div>

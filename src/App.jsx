@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <div className='container'>
+      <div className='containerApp'>
         <TodoControls/>
         <TaskList tasks={Tasks} setTasks={setTasks}/>
       </div>

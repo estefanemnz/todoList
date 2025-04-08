@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import styles from './Task.module.css'
 import TrashIcon from '@/assets/TrashIcon.svg'
 import EditIcon from '@/assets/EditIcon.svg'
 import Modal from '@/components/Modal/Modal'
@@ -26,7 +27,7 @@ function Task(props) {
     }
     
   return (
-    <div>
+    <div className={styles.containerTasks}>
         <div>
             <input type='checkbox'/>
             <span>{props.name}</span>
