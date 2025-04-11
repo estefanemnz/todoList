@@ -44,7 +44,6 @@ function TodoControls() {
       cursor: 'pointer',
       backgroundColor:' #f7f7f7',
       color:' #6C63FF',
-      fontWeight: 'bold',
       '&:hover': {
         backgroundColor: '#DBD9F9',
       }
@@ -77,6 +76,7 @@ function TodoControls() {
         </div>
         <div className={styles.filter}>
           <Select 
+          isSearchable={false}
             classNamePrefix="select"
             className={styles.selectContainer}
             options={options}

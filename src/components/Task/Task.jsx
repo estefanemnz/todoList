@@ -27,9 +27,12 @@ function Task(props) {
     }
     
   return (
-    <div className={styles.containerTasks}>
-        <div>
-            <input type='checkbox'/>
+    <div className={styles.Task}>
+        <div className={styles.titleTask}>
+            <label className={styles.checkboxContainer}>
+                <input type='checkbox'/>
+                <span className={styles.customCheckbox}></span>
+            </label>
             <span>{props.name}</span>
         </div>
 
