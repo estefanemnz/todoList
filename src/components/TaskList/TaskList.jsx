@@ -35,16 +35,17 @@ function TaskList(props) {
               tasks={props.tasks}
             />
           ))}
-        <button onClick={() => setStatusModal(true)} className={styles.addButton}>
-        +</button>
-        {statusModal && 
-          <Modal 
-            title='Adicionar tarefa'
-            editValue={setNewTaskText}
-            action='Adicionar'
-            statusModal={setStatusModal}
-            buttonAction={handleConfirm}
-          />}
+        <div className={styles.buttonContainer}>
+          <button onClick={() => setStatusModal(true)} className={styles.addButton}></button>
+          {statusModal && 
+            <Modal 
+              title='Adicionar tarefa'
+              editValue={setNewTaskText}
+              action='Adicionar'
+              statusModal={setStatusModal}
+              buttonAction={handleConfirm}
+            />}
+        </div>
       </div>
   )
 }

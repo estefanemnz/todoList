@@ -36,10 +36,13 @@ function Task(props) {
             <span>{props.name}</span>
         </div>
 
-        <div>
-            <button onClick={() => 
-                {setStatusModal(true)}}>
-                <img src={EditIcon}/>
+        <div className={styles.editDeleteContainer}>
+            <button 
+                onClick={() => 
+                    {setStatusModal(true)}}>
+                    <img src={EditIcon}
+                    className={styles.editButton}
+            />
             </button>
                 {statusModal && 
                     <Modal 
