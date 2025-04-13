@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import styles from './Task.module.css'
-import TrashIcon from '@/assets/TrashIcon.svg'
-import EditIcon from '@/assets/EditIcon.svg'
+
+import { Trash2, Pencil } from 'lucide-react'
+
 import Modal from '@/components/Modal/Modal'
 
 function Task(props) {
@@ -38,11 +39,8 @@ function Task(props) {
 
         <div className={styles.editDeleteContainer}>
             <button 
-                onClick={() => 
-                    {setStatusModal(true)}}>
-                    <img src={EditIcon}
-                    className={styles.editButton}
-            />
+                onClick={() => {setStatusModal(true)}}>
+                <Pencil className={styles.editButton}/>
             </button>
                 {statusModal && 
                     <Modal 
@@ -54,7 +52,7 @@ function Task(props) {
                         editValue={setTaskText}
                     />}
             <button>
-                <img src={TrashIcon} onClick={handleDelete}/>
+                <Trash2 onClick={handleDelete} className={styles.deleteButton}/>
             </button>
         </div>
     </div>

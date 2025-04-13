@@ -10,13 +10,13 @@ function App() {
     {title: "Tarefa 1",
       id: uuidv4()
     },
-    {title: "Estudar POO",
+    {title: "Tarefa 938583",
       id: uuidv4()
     },
-    {title: "Fazer conciliação",
+    {title: "Tarefa 389593",
       id: uuidv4()
     },
-    {title: "Terminar CSS",
+    {title: "Tarefa 4",
       id: uuidv4()
     }
   ]);

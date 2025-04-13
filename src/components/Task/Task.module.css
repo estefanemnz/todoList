@@ -61,5 +61,28 @@
 
 .editDeleteContainer{
     margin-left: auto;
+    display: flex;
+    gap: 1rem;
 }
 
+.editDeleteContainer button{
+    background: none;
+    color: #CDCDCD;
+    width: 1.125rem;
+    height: 1.5rem;
+}
+
+.deleteButton{
+    transition: color 0.2s ease;
+}
+.deleteButton:hover{
+    color: #E50000;
+}
+
+.editButton{
+    transition: color 0.3s ease;
+}
+
+.editButton:hover{
+    color: #6C63FF;
+}

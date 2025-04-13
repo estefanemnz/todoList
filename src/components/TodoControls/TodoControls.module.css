@@ -69,3 +69,17 @@ h1{
     box-shadow: 0 0 1.5px 2px rgba(108, 99, 255, 0.3);
 
 }
+
+.moonIcon{
+    color: white;
+    background: #6C63FF;
+    border-radius: 8px;
+    width: 2.375rem;
+    height: 2.375rem;
+    padding: 0.3125rem;
+    transition: background 0.3s ease;
+}
+
+.moonIcon:hover{
+    background: #5850DD;
+}

@@ -1,8 +1,8 @@
 import React from 'react'
 import Select from 'react-select'
 
-import ColorScheme from '@/assets/ColorScheme.svg'
-import SearchIcon from '@/assets/SearchIcon.svg'
+import { Moon } from 'lucide-react'
+import { Search } from 'lucide-react'
 
 import styles from './TodoControls.module.css'
 
@@ -71,7 +71,7 @@ function TodoControls() {
         <div className={styles.search}>
           <input placeholder='Buscar tarefa...' />
           <button className={styles.searchButton}>
-            <img src={SearchIcon} />
+            <Search color='#6C63FF'/>
           </button>
         </div>
         <div className={styles.filter}>
@@ -86,7 +86,7 @@ function TodoControls() {
           />
         </div>
         <button className={styles.colorButton}>
-          <img src={ColorScheme} />
+          <Moon className={styles.moonIcon}/>
         </button>
       </div>
     </div>

@@ -49,6 +49,7 @@
 }
 
 .addButton:hover{
+    border: 2px solid #6C63FF;
     background-color:  #534CC2;
     box-shadow: 0 0 12px 2px rgba(108, 99, 255, 0.4);
 
