@@ -3,7 +3,7 @@ import React from 'react'
 function Modal(props) {
 
   return (
-    <div>
+    <div className={styles.overlay}>
         <div>
             <strong>{props.title}</strong>
             <input value={props.value} onChange={(e) => props.editValue(e.target.value)}/>

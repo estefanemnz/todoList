@@ -86,3 +86,8 @@
 .editButton:hover{
     color: #6C63FF;
 }
+
+.done{
+    text-decoration: line-through;
+    color: rgba(25, 25, 25, 0.4);
+}

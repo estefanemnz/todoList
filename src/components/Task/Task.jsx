@@ -7,6 +7,7 @@ import { Trash2, Pencil } from 'lucide-react'
 import Modal from '@/components/Modal/Modal'
 
 function Task(props) {
+    const [checked, setChecked] = useState(false)
     const [statusModal, setStatusModal] = useState(false)
     const [taskText, setTaskText] = useState(props.name)
 
@@ -31,10 +32,10 @@ function Task(props) {
     <div className={styles.Task}>
         <div className={styles.titleTask}>
             <label className={styles.checkboxContainer}>
-                <input type='checkbox'/>
+                <input type='checkbox' checked={checked} onChange={() => setChecked(!checked)}/>
                 <span className={styles.customCheckbox}></span>
             </label>
-            <span>{props.name}</span>
+            <span className={checked ? styles.done : ''}>{props.name}</span>
         </div>
 
         <div className={styles.editDeleteContainer}>
