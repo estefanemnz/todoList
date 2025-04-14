@@ -21,11 +21,11 @@ function TaskList(props) {
               setEditingTask={props.setEditingTask}
             />
           ))}
-        <div className={styles.buttonContainer}>
+       <div className={styles.buttonContainer}>
           <button 
             onClick={() => {
               props.setModalIsOpen(true)
-              props.setActionModal('Adicionar')
+              props.setActionModal('ADICIONAR')
               }} 
             className={styles.addButton}>
             

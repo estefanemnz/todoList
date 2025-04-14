@@ -27,7 +27,7 @@ function Task(props) {
             <button 
                 onClick={() => {
                     props.setModalIsOpen(true)
-                    props.setActionModal('Editar')
+                    props.setActionModal('EDITAR')
                     props.setTaskText(props.name)
                     props.setEditingTask(props.id)                    
                 }}>

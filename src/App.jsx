@@ -28,7 +28,7 @@ function App() {
   const [taskText, setTaskText] = useState('')
 
   function handleConfirm(){
-    if(actionModal == 'Adicionar'){
+    if(actionModal == 'ADICIONAR'){
       if(taskText.trim() !== ''){
         const newTask = {
           title: taskText,
@@ -40,19 +40,26 @@ function App() {
         setTaskText('')
       }
   
-    }else if(actionModal == 'Editar'){
+    }else if(actionModal == 'EDITAR'){
       const updatedTasks = Tasks.map(Task => {
         if(Task.id === taskEditing) {
-            return { ...Tasks, title: taskText}
+            return { ...Task, title: taskText}
         }
         return Task
     })
     setTasks(updatedTasks)
     setModalIsOpen(false)
     setTaskText('')
-    setEditingTask(null)
+    setEditingTask(null)}
+
 }
-    }
+
+function handleKeyDown(e){
+  if(e.key == 'Enter'){
+    e.preventDefault()
+    handleConfirm()
+  }
+}
   return (
     <>
       <div className='containerApp'>
@@ -75,7 +82,7 @@ function App() {
           taskText={taskText}
           setTaskText={setTaskText}
           setModalIsOpen={setModalIsOpen}
-
+          onKeyDown={handleKeyDown}
         />}
 
       </div>
