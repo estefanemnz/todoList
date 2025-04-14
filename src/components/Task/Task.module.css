@@ -19,7 +19,7 @@
 
 .checkboxContainer{
     height: 1.625rem;
-    width: 1.625rem;
+    min-width: 1.625rem;
     display: inline-block;
     position: relative;
     cursor: pointer;
