@@ -7,6 +7,8 @@ import Modal from '@/components/Modal/Modal'
 
 
 function App() {
+
+  const [selectedOption, setSelectedOption] = useState('todas')
   const [taskEditing, setEditingTask] = useState(null)
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [actionModal, setActionModal] = useState('')
@@ -15,19 +17,19 @@ function App() {
   const [Tasks, setTasks] = useState([
     {title: "Tarefa 1",
       id: uuidv4(),
-      isCompleted: false
+      isCompleted: isCompleted
     },
-    {title: "Tarefa 938583",
+    {title: "Tarefa 2",
       id: uuidv4(),
-      isCompleted: false
+      isCompleted: isCompleted
     },
-    {title: "Tarefa 389593",
+    {title: "Tarefa 3",
       id: uuidv4(),
-      isCompleted: false
+      isCompleted: isCompleted
     },
     {title: "Tarefa 4",
       id: uuidv4(),
-      isCompleted: false
+      isCompleted: isCompleted
     }
   ]);
 
@@ -65,36 +67,40 @@ function handleKeyDown(e){
     e.preventDefault()
     handleConfirm()
   }
+                                                                                                                                   
 }
+
   return (
     <>
       <div className='containerApp'>
 
         <TodoControls
-          
+          setSelectedOption={setSelectedOption}
+          handleSelect={handleSelect}
         />
-
         <TaskList 
-          tasks={Tasks} 
+          tasks={
+            selectedOption === 'todas' ? Tasks
+            : selectedOption === 'completas' ? Tasks.filter(task => task.isCompleted)
+            : Tasks.filter(task => !task.isCompleted)
+          } 
           setTasks={setTasks} 
           setModalIsOpen={setModalIsOpen}
           setActionModal={setActionModal}
           setTaskText={setTaskText}
           setEditingTask={setEditingTask}
           setIsCompleted={setIsCompleted}
-          
         />
 
-      {modalIsOpen && 
-        <Modal 
-          actionModal={actionModal}
-          actionConfirm={handleConfirm}
-          taskText={taskText}
-          setTaskText={setTaskText}
-          setModalIsOpen={setModalIsOpen}
-          onKeyDown={handleKeyDown}
-        />}
-
+        {modalIsOpen && 
+          <Modal 
+            actionModal={actionModal}
+            actionConfirm={handleConfirm}
+            taskText={taskText}
+            setTaskText={setTaskText}
+            setModalIsOpen={setModalIsOpen}
+            onKeyDown={handleKeyDown}
+          />}
       </div>
     </>
   )

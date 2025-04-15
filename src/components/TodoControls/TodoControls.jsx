@@ -1,12 +1,15 @@
 import React from 'react'
 import Select from 'react-select'
+import { useState } from 'react'
 
 import { Moon } from 'lucide-react'
 import { Search } from 'lucide-react'
 
 import styles from './TodoControls.module.css'
 
-function TodoControls() {
+function TodoControls(props) {
+
+  const[selectedOption, setSelectedOption] = useState('todas')
 
   const options = [
     { value: 'todas', label: 'Todas'},
@@ -83,6 +86,10 @@ function TodoControls() {
             defaultValue={options[0]}
             styles={stylesSelect}
             blurInputOnSelect
+            onChange={(option) => {
+              props.setSelectedOption(option.value)
+              props.handleSelect()
+            }}
           />
         </div>
         <button className={styles.colorButton}>

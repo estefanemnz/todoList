@@ -1,11 +1,22 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import styles from './TaskList.module.css'
 
 import Task from '@/components/Task/Task'
 
 function TaskList(props) {
+
+  useEffect(() => {
+    const storedTasks = localStorage.getItem('tasks')
+    if(storedTasks){
+      props.setTasks(JSON.parse(storedTasks))
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(props.tasks))
+  }, [props.tasks])
 
   return (
       <div className={styles.containerTasks}>
