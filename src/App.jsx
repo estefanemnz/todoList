@@ -10,18 +10,24 @@ function App() {
   const [taskEditing, setEditingTask] = useState(null)
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [actionModal, setActionModal] = useState('')
+  const [isCompleted, setIsCompleted] = useState(false)
+
   const [Tasks, setTasks] = useState([
     {title: "Tarefa 1",
-      id: uuidv4()
+      id: uuidv4(),
+      isCompleted: false
     },
     {title: "Tarefa 938583",
-      id: uuidv4()
+      id: uuidv4(),
+      isCompleted: false
     },
     {title: "Tarefa 389593",
-      id: uuidv4()
+      id: uuidv4(),
+      isCompleted: false
     },
     {title: "Tarefa 4",
-      id: uuidv4()
+      id: uuidv4(),
+      isCompleted: false
     }
   ]);
 
@@ -64,7 +70,9 @@ function handleKeyDown(e){
     <>
       <div className='containerApp'>
 
-        <TodoControls/>
+        <TodoControls
+          
+        />
 
         <TaskList 
           tasks={Tasks} 
@@ -73,6 +81,8 @@ function handleKeyDown(e){
           setActionModal={setActionModal}
           setTaskText={setTaskText}
           setEditingTask={setEditingTask}
+          setIsCompleted={setIsCompleted}
+          
         />
 
       {modalIsOpen && 

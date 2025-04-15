@@ -76,7 +76,7 @@ function TodoControls() {
         </div>
         <div className={styles.filter}>
           <Select 
-          isSearchable={false}
+            isSearchable={false}
             classNamePrefix="select"
             className={styles.selectContainer}
             options={options}

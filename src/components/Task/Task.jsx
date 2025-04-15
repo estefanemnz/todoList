@@ -12,12 +12,25 @@ function Task(props) {
         props.setTasks(updatedTasks)
 
     }
-    
+
   return (
     <div className={styles.Task}>
         <div className={styles.titleTask}>
             <label className={styles.checkboxContainer}>
-                <input type='checkbox' checked={checked} onChange={() => setChecked(!checked)}/>
+                <input 
+                    type='checkbox' 
+                    checked={checked} 
+                    onChange={() => { 
+                        setChecked(!checked)
+                        const updatedTasks = props.tasks.map(task => {
+                            if (task.id === props.id) {
+                                return { ...task, isCompleted: !checked }
+                            }
+                            return task
+                        })
+                    
+                        props.setTasks(updatedTasks)
+                    }}/>
                 <span className={styles.customCheckbox}></span>
             </label>
             <span className={checked ? styles.done : ''}>{props.name}</span>

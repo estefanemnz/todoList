@@ -19,6 +19,7 @@ function TaskList(props) {
               setActionModal={props.setActionModal}
               setTaskText={props.setTaskText}
               setEditingTask={props.setEditingTask}
+              setIsCompleted={props.setIsCompleted}
             />
           ))}
        <div className={styles.buttonContainer}>
